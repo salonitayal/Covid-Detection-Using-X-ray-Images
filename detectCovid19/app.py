@@ -27,7 +27,7 @@ def init():
 # Function to load and prepare the image in right shape
 def read_image(filename):
     # Load the image
-    img = load_img(filename, grayscale=True, target_size=(224, 224))
+    img = load_img(filename, target_size=(224, 224))
     # Convert the image to array
     img = img_to_array(img)
     img = np.expand_dims(img, axis=0)
