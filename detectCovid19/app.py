@@ -27,10 +27,11 @@ def init():
 # Function to load and prepare the image in right shape
 def read_image(filename):
     # Load the image
-    img = load_img(filename, target_size=(224, 224))
+    img = load_img(filename, color_mode = "rgb", target_size=(224, 224, 3))
     # Convert the image to array
     img = img_to_array(img)
     img = np.expand_dims(img, axis=0)
+    print(img.shape)
     return img
 
 
@@ -63,6 +64,7 @@ def predict():
                     final_result = "Covid Negative"
                 return render_template('predict.html', final_result = final_result)
         except Exception as e:
+            print (e)
             return "Unable to read the file. Please check if the file extension is correct."
 
     return render_template('predict.html')
