@@ -69,6 +69,14 @@ def predict():
 
     return render_template('predict.html')
 
+@app.route("/detect.html")
+def detect():
+    return render_template('detect.html')
+
+@app.route("/about.html")
+def about():
+    return render_template('about.html')
+
 if __name__ == "__main__":
     init()
     app.run()
